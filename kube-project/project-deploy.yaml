@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: project-deploy
+  name: project-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: project-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: project-deploy
+    spec:
+      containers:
+      - image: himanshuofficial123/k8s-project:1.0
+        name: k8s-project
+        ports:
+        - containerPort: 8000
+        resources: {}
+status: {}
